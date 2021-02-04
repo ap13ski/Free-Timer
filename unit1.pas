@@ -15,6 +15,7 @@ type
   TForm1 = class(TForm)
     ButtonStart: TButton;
     CheckBoxRepeat: TCheckBox;
+    CheckBoxPopup: TCheckBox;
     ComboBoxMode: TComboBox;
     LabelCountdown: TLabel;
     LabelHoursCount: TLabel;
@@ -167,16 +168,22 @@ begin
   Form1.LabelSecondsCount.Enabled := bState;
   Form1.ComboBoxMode.Enabled := bState;
   Form1.CheckBoxRepeat.Enabled:= bState;
+  Form1.CheckBoxPopup.Enabled:= bState;
 end;
 
-procedure CheckRepeatState();
+procedure CheckRepeatPopupState();
 begin
   if Form1.ComboBoxMode.ItemIndex = 0 then
-    Form1.CheckBoxRepeat.Enabled := True
+    begin
+      Form1.CheckBoxRepeat.Enabled := True;
+      Form1.CheckBoxPopup.Enabled := True;
+    end
   else
   begin
     Form1.CheckBoxRepeat.Enabled := False;
     Form1.CheckBoxRepeat.Checked := False;
+    Form1.CheckBoxPopup.Enabled := False;
+    Form1.CheckBoxPopup.Checked := False;
   end;
 end;
 
@@ -185,7 +192,7 @@ begin
   Form1.ButtonStart.Caption := 'Start';
   SetTimerActivatedState(False);
   SetElementsEnabledState(True);
-  CheckRepeatState();
+  CheckRepeatPopupState();
   CheckTimeZero();
 end;
 
@@ -201,7 +208,7 @@ procedure Execute();
 begin
   if Form1.ComboBoxMode.ItemIndex = 0 then
   begin
-    Form1.Show;
+    if Form1.CheckBoxPopup.Checked = True then Form1.Show;
     sPath := ExtractFilePath(ParamStr(0)) + 'alarm.wav';
     fpSystem('paplay ' + sPath);
     if Form1.CheckBoxRepeat.Checked = True then ResetStateRepeat()
@@ -262,7 +269,7 @@ end;
 
 procedure TForm1.ComboBoxModeChange(Sender: TObject);
 begin
-  CheckRepeatState();
+  CheckRepeatPopupState();
 end;
 
 procedure TForm1.TimerGlobalTimer(Sender: TObject);

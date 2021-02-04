@@ -1,12 +1,12 @@
 object Form1: TForm1
   Left = 644
-  Height = 168
+  Height = 166
   Top = 263
-  Width = 496
+  Width = 613
   BorderStyle = bsSingle
   Caption = 'Free Timer'
-  ClientHeight = 168
-  ClientWidth = 496
+  ClientHeight = 166
+  ClientWidth = 601
   DoubleBuffered = True
   Icon.Data = {
     8168000000000100010000000000010020006B6800001600000089504E470D0A
@@ -850,20 +850,20 @@ object Form1: TForm1
   ParentDoubleBuffered = False
   LCLVersion = '2.0.0.4'
   object TrackBarHours: TTrackBar
-    Left = 52
+    Left = 48
     Height = 25
     Top = 12
-    Width = 400
+    Width = 511
     Max = 24
     OnChange = TrackBarHoursChange
     Position = 0
     TabOrder = 0
   end
   object TrackBarMinutes: TTrackBar
-    Left = 52
+    Left = 48
     Height = 25
     Top = 52
-    Width = 400
+    Width = 511
     Max = 59
     OnChange = TrackBarMinutesChange
     Position = 0
@@ -888,7 +888,7 @@ object Form1: TForm1
     ParentFont = False
   end
   object LabelHoursCount: TLabel
-    Left = 466
+    Left = 573
     Height = 22
     Top = 8
     Width = 10
@@ -896,7 +896,7 @@ object Form1: TForm1
     ParentColor = False
   end
   object LabelMinutesCount: TLabel
-    Left = 466
+    Left = 573
     Height = 22
     Top = 48
     Width = 10
@@ -904,7 +904,7 @@ object Form1: TForm1
     ParentColor = False
   end
   object ButtonStart: TButton
-    Left = 382
+    Left = 486
     Height = 28
     Top = 128
     Width = 106
@@ -914,7 +914,7 @@ object Form1: TForm1
     TabOrder = 5
   end
   object ComboBoxMode: TComboBox
-    Left = 248
+    Left = 352
     Height = 28
     Top = 128
     Width = 124
@@ -931,10 +931,10 @@ object Form1: TForm1
     Text = 'Signal'
   end
   object TrackBarSeconds: TTrackBar
-    Left = 52
+    Left = 48
     Height = 25
     Top = 92
-    Width = 400
+    Width = 511
     Max = 59
     OnChange = TrackBarSecondsChange
     Position = 0
@@ -950,7 +950,7 @@ object Form1: TForm1
     ParentFont = False
   end
   object LabelSecondsCount: TLabel
-    Left = 466
+    Left = 573
     Height = 22
     Top = 88
     Width = 10
@@ -958,7 +958,7 @@ object Form1: TForm1
     ParentColor = False
   end
   object CheckBoxRepeat: TCheckBox
-    Left = 160
+    Left = 256
     Height = 27
     Top = 128
     Width = 77
@@ -977,10 +977,18 @@ object Form1: TForm1
     ParentColor = False
     ParentFont = False
   end
+  object CheckBoxPopup: TCheckBox
+    Left = 160
+    Height = 27
+    Top = 128
+    Width = 77
+    Caption = 'Pop up'
+    TabOrder = 6
+  end
   object TimerGlobal: TTimer
     Enabled = False
     OnTimer = TimerGlobalTimer
-    left = 192
+    left = 8
     top = 160
   end
 end
