@@ -2,7 +2,7 @@ object Form1: TForm1
   Left = 644
   Height = 166
   Top = 263
-  Width = 613
+  Width = 601
   BorderStyle = bsSingle
   Caption = 'Free Timer'
   ClientHeight = 166
