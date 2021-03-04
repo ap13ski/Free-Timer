@@ -911,7 +911,7 @@ object Form1: TForm1
     Caption = 'Start'
     Enabled = False
     OnClick = ButtonStartClick
-    TabOrder = 5
+    TabOrder = 6
   end
   object ComboBoxMode: TComboBox
     Left = 352
@@ -927,7 +927,7 @@ object Form1: TForm1
     )
     OnChange = ComboBoxModeChange
     Style = csDropDownList
-    TabOrder = 4
+    TabOrder = 5
     Text = 'Signal'
   end
   object TrackBarSeconds: TTrackBar
@@ -963,7 +963,7 @@ object Form1: TForm1
     Top = 128
     Width = 77
     Caption = 'Repeat'
-    TabOrder = 3
+    TabOrder = 4
   end
   object LabelCountdown: TLabel
     Left = 8
@@ -983,7 +983,7 @@ object Form1: TForm1
     Top = 128
     Width = 77
     Caption = 'Pop up'
-    TabOrder = 6
+    TabOrder = 3
   end
   object TimerGlobal: TTimer
     Enabled = False
