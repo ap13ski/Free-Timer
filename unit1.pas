@@ -231,34 +231,29 @@ begin
   CheckTimeZero();
 end;
 
-procedure TForm1.TrackBarHoursChange(Sender: TObject);
+procedure TrackBarChange(cTrackBar: TTrackBar; cLabel: TLabel);
 begin
   if bActivated = False then
   begin
-    LabelHoursCount.Caption := IntToStr(TrackBarHours.Position);
+    cLabel.Caption := IntToStr(cTrackBar.Position);
     UpdateTimeVariablesState();
     UpdateLabelCountdown();
   end;
+end;
+
+procedure TForm1.TrackBarHoursChange(Sender: TObject);
+begin
+  TrackBarChange(Form1.TrackBarHours, Form1.LabelHoursCount);
 end;
 
 procedure TForm1.TrackBarMinutesChange(Sender: TObject);
 begin
-  if bActivated = False then
-  begin
-    LabelMinutesCount.Caption := IntToStr(TrackBarMinutes.Position);
-    UpdateTimeVariablesState();
-    UpdateLabelCountdown();
-  end;
+  TrackBarChange(Form1.TrackBarMinutes, Form1.LabelMinutesCount);
 end;
 
 procedure TForm1.TrackBarSecondsChange(Sender: TObject);
 begin
-  if bActivated = False then
-  begin
-    LabelSecondsCount.Caption := IntToStr(TrackBarSeconds.Position);
-    UpdateTimeVariablesState();
-    UpdateLabelCountdown();
-  end;
+  TrackBarChange(Form1.TrackBarSeconds, Form1.LabelSecondsCount);
 end;
 
 procedure TForm1.ButtonStartClick(Sender: TObject);
