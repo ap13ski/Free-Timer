@@ -278,7 +278,7 @@ begin
   end;
   if tSecondsTotal = 0 then
   begin
-    TimerGlobal.Enabled := False;
+    SetTimerActivatedState(False);
     Execute();
   end;
 end;
