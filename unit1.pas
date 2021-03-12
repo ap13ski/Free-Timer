@@ -45,13 +45,12 @@ var
   tHours, tMinutes, tSeconds: Integer;
   tSecondsTotal: Integer;
   tSelectedTime: Integer;
-  bActivated: Boolean;
   sName: String = 'Free Timer';
   sH: String = ' h ';
   sM: String = ' m ';
   sS: String = ' s ';
   fH, fM, fS: String;
-  var sPath: AnsiString;
+  sPath: AnsiString;
 
 implementation
 
@@ -139,6 +138,11 @@ begin
   tSeconds := Form1.TrackBarSeconds.Position;
 end;
 
+procedure SetTimerActivatedState(bState: Boolean);
+begin
+  Form1.TimerGlobal.Enabled := bState;
+end;
+
 procedure ResetStateRepeat();
 begin
   tSecondsTotal := tSelectedTime;
@@ -146,13 +150,7 @@ begin
   UpdateLabels();
   SetHMSFromTrackbars();
   UpdateFormCaption();
-  Form1.TimerGlobal.Enabled := True;
-end;
-
-procedure SetTimerActivatedState(bState: Boolean);
-begin
-  bActivated := bState;
-  Form1.TimerGlobal.Enabled := bState;
+  SetTimerActivatedState(True);
 end;
 
 procedure SetElementsEnabledState(bState: Boolean);
@@ -233,7 +231,7 @@ end;
 
 procedure TrackBarChange(cTrackBar: TTrackBar; cLabel: TLabel);
 begin
-  if bActivated = False then
+  if Form1.TimerGlobal.Enabled = False then
   begin
     cLabel.Caption := IntToStr(cTrackBar.Position);
     UpdateTimeVariablesState();
@@ -258,7 +256,7 @@ end;
 
 procedure TForm1.ButtonStartClick(Sender: TObject);
 begin
-  if bActivated = False then ActivateTimer()
+  if Form1.TimerGlobal.Enabled = False then ActivateTimer()
   else ResetState();
 end;
 
