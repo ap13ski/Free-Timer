@@ -80,12 +80,18 @@ end;
 
 procedure UpdateLabelCountdown();
 begin
-  if (RHours() > 9) then fH := IntToStr(RHours())
-  else fH := '0' + IntToStr(RHours());
-  if (RMinutes() > 9) then fM := IntToStr(RMinutes())
-  else fM := '0' + IntToStr(RMinutes());
-  if (RSeconds() > 9) then fS := IntToStr(RSeconds())
-  else fS := '0' + IntToStr(RSeconds());
+  if (RHours() > 9) then
+    fH := IntToStr(RHours())
+  else
+    fH := '0' + IntToStr(RHours());
+  if (RMinutes() > 9) then
+    fM := IntToStr(RMinutes())
+  else
+    fM := '0' + IntToStr(RMinutes());
+  if (RSeconds() > 9) then
+    fS := IntToStr(RSeconds())
+  else
+    fS := '0' + IntToStr(RSeconds());
   Form1.LabelCountdown.Caption := fH + ':' + fM + ':' + fS;
 end;
 
@@ -172,10 +178,10 @@ end;
 procedure CheckRepeatPopupState();
 begin
   if Form1.ComboBoxMode.ItemIndex = 0 then
-    begin
-      Form1.CheckBoxRepeat.Enabled := True;
-      Form1.CheckBoxPopup.Enabled := True;
-    end
+  begin
+    Form1.CheckBoxRepeat.Enabled := True;
+    Form1.CheckBoxPopup.Enabled := True;
+  end
   else
   begin
     Form1.CheckBoxRepeat.Enabled := False;
