@@ -1,5 +1,5 @@
 # Free-Timer
-A simple Free Pascal program with GUI (qt5) for GNU/Linux to create a sound signal or power off / reboot the system automatically after a specified time.
+A simple Free Pascal application with GUI (qt5) for GNU/Linux to create a sound signal or power off / reboot the system automatically after a specified time.
 
 To create a sound signal the `paplay` utility (PulseAudio) is used. Make sure you have installed the `pulseaudio-utils` package from your repository:
 `sudo apt-get install pulseaudio-utils`
