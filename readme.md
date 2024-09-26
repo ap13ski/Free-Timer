@@ -6,6 +6,8 @@ To create a sound signal the `paplay` utility (PulseAudio) is used. Make sure yo
 
 The sound file `alarm.wav` should be located in the program directory.
 
+You can download the executable file `freetimer` and `alarm.wav` on the [release page](https://github.com/ap13ski/Free-Timer/releases/tag/main). 
+
 Lazarus 2.0.0 (qt5) - Debian package.
 
 ![Screenshot](timer.png)
